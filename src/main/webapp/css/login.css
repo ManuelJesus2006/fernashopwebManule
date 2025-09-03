@@ -1,0 +1,23 @@
+.tituloPrincipal {
+    font-size: 2em;
+    font-weight: 700;
+    font-family: "Arial Black";
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0;
+    padding: 20px;
+    background-color: #1e3c72;
+    color: #ffffff;
+    filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+h2{
+    background-color: yellow;
+    font-family: "Arial Black";
+    color: gray;
+    max-width: 50%;
+    text-align: center;
+    margin: auto;
+    border-radius: 5px;
+}

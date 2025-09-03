@@ -90,13 +90,13 @@ public class Producto implements Serializable {
             case "Galaxy S23":
                 return "https://m.media-amazon.com/images/I/61+aq7q+FUL._UF1000,1000_QL80_.jpg";
             case "Serie 6 SMS68TI01E":
-                return "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Bosch_SMS68TI01E_dishwasher.jpg/1200px-Bosch_SMS68TI01E_dishwasher.jpg";
+                return "https://static.fnac-static.com/multimedia/Images/FA/FA/73/55/5600250-1505-3756-1/tsp20250810133309/Bosch-Serie-6-Super-Silence-Plus-SMS68TI01E-Lave-vaielle-pose-libre-largeur-60-cm-profondeur-60-cm-hauteur-84-5-cm-Inox-argent.jpg";
             case "Spectre x360":
-                return "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/HP_Spectre_x360_13-inch_2019.jpg/1200px-HP_Spectre_x360_13-inch_2019.jpg";
+                return "https://m.media-amazon.com/images/I/51k4j6kS6fL.jpg";
             case "OLED55C3":
-                return "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/LG_OLED_TV.jpg/1200px-LG_OLED_TV.jpg";
+                return "https://m.media-amazon.com/images/I/61q+K8aPi6L.jpg";
             case "EOS R6":
-                return "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Canon_EOS_R6_2020.jpg/1200px-Canon_EOS_R6_2020.jpg";
+                return "https://media.ldlc.com/r1600/ld/products/00/05/99/42/LD0005994283.jpg";
             case "MALM":
                 return "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/IKEA_MALM_bed_with_storage.jpg/1200px-IKEA_MALM_bed_with_storage.jpg";
             case "W Collection W7":
