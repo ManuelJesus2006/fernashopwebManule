@@ -7,6 +7,8 @@ import models.*;
 import persistencia.Persistencia;
 
 import java.io.Serializable;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -660,8 +662,19 @@ public class Controlador implements Serializable {
         c.setValid(false);
         //Persistencia.guardaClienteEnDisco(c);
         daoClienteSQL.update(dao, c);
-        Comunicaciones.enviaCorreoToken(c.getEmail(), "¡Hola! Bienvenido a FERNANSHOP " + c.getNombre() + ", " +
+        /*Comunicaciones.enviaCorreoToken(c.getEmail(), "¡Hola! Bienvenido a FERNANSHOP " + c.getNombre() + ", " +
                 "tu token de verificación de la cuenta es", "TU CÓDIGO DE VERIFICACIÓN DE CUENTA", token, c.getNombre());
+        return token;*/
+        String urlBase = null;
+        try {
+            urlBase = "http://" + InetAddress.getLocalHost().getHostAddress() + ":8081/FernanshopWEB_war_exploded/";
+        } catch (UnknownHostException e) {
+            throw new RuntimeException(e);
+        }
+        String enlaceAcceso = urlBase + "verificar.jsp?token=" + token + "&userId=" + c.getId();
+
+        Comunicaciones.enviaCorreoToken(c.getEmail(), "¡Hola! Bienvenido a FERNANSHOP, haz clic para iniciar sesión.", "ENLACE DE ACCESO ÚNICO", enlaceAcceso, c.getNombre());
+
         return token;
     }
 
@@ -757,6 +770,40 @@ public class Controlador implements Serializable {
         return true;
     }
 
+    public void modificarDatoConcretoCliente(String tipoDeDatoACambiar, String dato, Cliente cliente) throws NumberFormatException{
+        switch (tipoDeDatoACambiar) {
+            case "nombre": cliente.setNombre(dato);
+            break;
+            case "clave": cliente.setClave(dato);
+            break;
+            case "email": cliente.setEmail(dato);
+            break;
+            case "localidad": cliente.setLocalidad(dato);
+            break;
+            case "provincia": cliente.setProvincia(dato);
+            break;
+            case "direccion": cliente.setDireccion(dato);
+            break;
+            case "telefono": cliente.setMovil(Integer.parseInt(dato));
+            break;
+        }
+        daoClienteSQL.update(dao, cliente);
+    }
+
+    public void modificarDatoConcretoTrabajador(String tipoDeDatoACambiar, String dato, Trabajador trabajador) throws NumberFormatException{
+        switch (tipoDeDatoACambiar) {
+            case "nombre": trabajador.setNombre(dato);
+            break;
+            case "email": trabajador.setEmail(dato);
+            break;
+            case "clave": trabajador.setPass(dato);
+            break;
+            case "telefono": trabajador.setMovil(Integer.parseInt(dato));
+            break;
+        }
+        daoTrabajadorSQL.update(dao, trabajador);
+    }
+
     // Metodo que borra un trabajador
     public boolean borraTrabajador(Trabajador temp) {
         // Persistencia.borraTrabajador(temp.getId());
@@ -776,9 +823,14 @@ public class Controlador implements Serializable {
         //return Persistencia.datosPrueba();
     }
 
-    // Metodo que quita un producto del carro del cliente
+    // Metodo que quita un producto del carro del cliente (solo 1 unidad del mismo)
     public boolean quitaProductoCarroCliente(Cliente cliente, int idProducto) {
         return daoCarroSQL.delete(dao, cliente, buscaProductoById(idProducto));
+    }
+
+    // Metodo que quita un producto del carro del cliente (todas la unidades del producto concreto)
+    public boolean quitaProductoCarroClienteAll(Cliente cliente, int idProducto) {
+        return daoCarroSQL.deleteProductoConcreto(dao, cliente, buscaProductoById(idProducto));
     }
 
     // Metodo que devuelve los pedidos que esten Cancelados
@@ -1053,5 +1105,20 @@ public class Controlador implements Serializable {
             }
         }
         return pedidos;
+    }
+
+
+    public void editarDatoConcretoProducto(String tipoDeDatoACambiar, String datoNuevo, Producto producto) {
+        switch (tipoDeDatoACambiar) {
+            case "marca": producto.setMarca(datoNuevo);
+                break;
+            case "modelo": producto.setModelo(datoNuevo);
+                break;
+            case "descripcion": producto.setDescripcion(datoNuevo);
+                break;
+            case "precio": producto.setPrecio(Float.parseFloat(datoNuevo));
+                break;
+        }
+        daoProductoSQL.update(dao, producto);
     }
 }

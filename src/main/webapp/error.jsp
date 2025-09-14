@@ -11,17 +11,25 @@
     response.sendRedirect("index.jsp");
     return;
   }
+  String error = session.getAttribute("error").toString();
 %>
 <html>
 <head>
   <title>ERROR</title>
-  <!--link rel="stylesheet" href="css/estiloPrincipal.css"-->
+  <link rel="stylesheet" href="css/error.css">
 </head>
 <body>
-<h2>Ha ocurrido un error al realizar su petición</h2>
-<p>
-  <%=session.getAttribute("error")%>
-</p>
-<a href="login.jsp"><button>Vuelva a intentarlo</button></a>
+<div class="contenedor-error">
+  <h2>Ha ocurrido un error al realizar su petición</h2>
+  <p>
+    <%=error%>
+  </p>
+  <%if (error.equals("Correo o contraseña incorrectos, vuelva a intentarlo")){%>
+  <a href="login.jsp"><button>Vuelva a intentarlo</button></a>
+  <%}else{%>
+  <a href="index.jsp"><button>Volver al inicio</button></a>
+  <%}
+    session.removeAttribute("error");%>
+</div>
 </body>
 </html>

@@ -1,0 +1,60 @@
+/* Estilo del contenedor principal */
+.formulariosBusqueda {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* Estilo para cada formulario de búsqueda */
+.formulariosBusqueda form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Estilo de los campos de entrada de texto y número */
+.formulariosBusqueda input[type="text"],
+.formulariosBusqueda input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box; /* Asegura que el padding no cambie el ancho */
+}
+
+/* Estilo para los placeholders */
+.formulariosBusqueda input::placeholder {
+    color: #999;
+}
+
+/* Estilo de los botones */
+.formulariosBusqueda button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formulariosBusqueda button:hover {
+    background-color: #0056b3;
+}
+
+/* Media query para pantallas más grandes (escritorio) */
+@media (min-width: 600px) {
+    .formulariosBusqueda {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}

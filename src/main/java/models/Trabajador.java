@@ -76,6 +76,16 @@ public class Trabajador implements Serializable {
         this.pedidosAsignados = pedidosAsignados;
     }
 
+    public String get(String tipoDato) {
+        switch (tipoDato){
+            case "nombre": return nombre;
+            case "email": return email;
+            case "clave": return pass;
+            case "telefono": return String.valueOf(movil);
+            default: return null;
+        }
+    }
+
     // Otros metodos
     @Override
     public String toString() {

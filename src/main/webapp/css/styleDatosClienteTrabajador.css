@@ -1,0 +1,82 @@
+/* Estilo para el contenedor principal de todos los registros */
+.contenedor-registros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f4f4f9;
+    min-height: 100vh;
+}
+
+/* Estilo para el mensaje cuando no hay registros */
+.no-registros {
+    text-align: center;
+    color: #888;
+    margin-top: 50px;
+}
+
+/* Estilo de la tarjeta para cada cliente o trabajador */
+.tarjeta-registro {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-registro:hover {
+    transform: translateY(-5px);
+}
+
+/* Estilos de los títulos dentro de la tarjeta */
+.tarjeta-registro h2 {
+    color: #1e3c72;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+}
+
+.tarjeta-registro h3 {
+    color: #495057;
+    font-size: 1.1em;
+    margin: 8px 0;
+}
+
+/* Estilo para el botón de volver al inicio */
+boton-volver-inicio {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px; /* Espacio para separarlo del panel */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+boton-volver-inicio:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+#seleccion{
+    background-color: dodgerblue;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#seleccion:hover{
+    background-color: deepskyblue;
+}

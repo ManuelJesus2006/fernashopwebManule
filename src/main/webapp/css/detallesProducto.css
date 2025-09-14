@@ -1,0 +1,125 @@
+/* Estilos generales de la página */
+body {
+    font-family: 'Amazon Ember', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #e3e6e6;
+    color: #0f1111;
+    line-height: 1.4;
+    padding: 20px;
+}
+
+/* Contenedor principal de la tarjeta del producto */
+.tarjeta-producto {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(15, 17, 17, 0.15);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Sección de la imagen y los detalles */
+.detalles-producto {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    gap: 20px;
+}
+
+.imagen-container {
+    flex-shrink: 0;
+    text-align: center;
+    width: 400px;
+}
+
+.imagen-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+/* Sección de la información (precio, marca, etc.) */
+.info-principal {
+    flex-grow: 1;
+}
+
+/* Estilo para la oferta */
+.oferta-especial {
+    color: #c45500;
+    font-weight: bold;
+    font-size: 1.2em;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Estilos de texto */
+.info-principal h3 {
+    color: #007185;
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.info-principal h2 {
+    color: #000; /* Color del precio a negro */
+    font-size: 2.2em;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.info-principal h3:last-of-type {
+    color: #0f1111;
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+/* Descripción del producto */
+.descripcion-producto {
+    color: #565959;
+    font-size: 1.1em;
+    margin-top: 10px;
+}
+
+/* Estilos de los botones de acción */
+.botones-accion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.botones-accion button {
+    background-color: #007bff; /* Color de fondo del botón a azul */
+    border: 1px solid #0056b3;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.botones-accion button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos para enlaces */
+.botones-accion a {
+    text-decoration: none;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    .detalles-producto {
+        flex-direction: column;
+    }
+    .imagen-container {
+        width: 100%;
+    }
+}

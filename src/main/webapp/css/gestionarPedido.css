@@ -1,0 +1,96 @@
+body {
+    background-color: #f4f4f9; /* Color de fondo general */
+    margin: 0;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h3 {
+    text-align: center;
+    color: #1e3c72; /* Color similar al de tu título principal */
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+form select,
+form input[type="text"],
+form input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+form select:focus,
+form input[type="text"]:focus,
+form input[type="date"]:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.cancel-button {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cancel-button:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}

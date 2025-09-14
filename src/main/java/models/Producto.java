@@ -22,6 +22,14 @@ public class Producto implements Serializable {
         this.relevancia = relevancia;
     }
 
+    //2do Constructor solo para visualizar en pedidos
+    public Producto(int id, String marca, String modelo, float precio) {
+        this.id = id;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.precio = precio;
+    }
+
     //Getters y Setters
     public int getId() {
         return id;
@@ -77,8 +85,8 @@ public class Producto implements Serializable {
         return "\t- " + marca + " - " + modelo + " (" + precio + ")";
     }
 
-    public String getUrlImagen(String modeloProducto) {
-        switch (modeloProducto) {
+    public String getUrlImagen() {
+        switch (modelo) {
             case "WH-1000XM5":
                 return "https://m.media-amazon.com/images/I/61fxPWFu6aL.jpg";
             case "Hue Starter Kit":
@@ -98,39 +106,51 @@ public class Producto implements Serializable {
             case "EOS R6":
                 return "https://media.ldlc.com/r1600/ld/products/00/05/99/42/LD0005994283.jpg";
             case "MALM":
-                return "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/IKEA_MALM_bed_with_storage.jpg/1200px-IKEA_MALM_bed_with_storage.jpg";
+                return "https://www.ikea.com/es/es/images/products/malm-comoda-4-cajones-blanco__0484879_pe621344_s5.jpg";
             case "W Collection W7":
-                return "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Whirlpool_W_Collection_oven_W7_OM4_4_H_black.jpg/1200px-Whirlpool_W_Collection_oven_W7_OM4_4_H_black.jpg";
+                return "https://www.vieffetrade.eu/shop/foto_articoli/Whirlpool/127100/127100-2.jpg";
             case "Echo Dot 5ª Gen":
-                return "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Amazon_Echo_Dot_5th_Gen.jpg/1200px-Amazon_Echo_Dot_5th_Gen.jpg";
+                return "https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_98657830/fee_786_587_png";
             case "Air Max 270":
-                return "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Nike_Air_Max_270.jpg/1200px-Nike_Air_Max_270.jpg";
+                return "https://cdn-images.farfetch-contents.com/12/83/31/75/12833175_21352537_600.jpg";
             case "Fenix 7":
-                return "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Garmin_Fenix_7.jpg/1200px-Garmin_Fenix_7.jpg";
+                return "https://cdn.barrabes.com/product/XLarge/1129867.jpg";
             case "Artisan 5KSM150":
-                return "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/KitchenAid_Artisan_Series_5KSM150_Stand_Mixer.jpg/1200px-KitchenAid_Artisan_Series_5KSM150_Stand_Mixer.jpg";
+                return "https://thumbs.ielectro.es/product/med/014862.webp";
             case "Mi Electric Scooter 4 Pro":
-                return "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Xiaomi_Mi_Electric_Scooter_4_Pro.jpg/1200px-Xiaomi_Mi_Electric_Scooter_4_Pro.jpg";
+                return "https://m.media-amazon.com/images/I/61k5iBneZnL.jpg";
             case "DCD796D2-QW":
-                return "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/DeWalt_DCD796D2-QW_cordless_drill.jpg/1200px-DeWalt_DCD796D2-QW_cordless_drill.jpg";
+                return "https://suministroscesarortega.com/wp-content/uploads/2024/07/714Hh1ADGfL._SL1500_.jpg";
             case "Surface Pro 9":
-                return "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Microsoft_Surface_Pro_9.jpg/1200px-Microsoft_Surface_Pro_9.jpg";
+                return "https://m.media-amazon.com/images/I/51kpOnI-UoL._UF894,1000_QL80_.jpg";
             case "Ultraboost 22":
-                return "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Adidas_Ultraboost_22.jpg/1200px-Adidas_Ultraboost_22.jpg";
+                return "https://cdn-images.farfetch-contents.com/19/43/49/22/19434922_43282895_1000.jpg";
             case "SoundLink Revolve+":
-                return "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Bose_SoundLink_Revolve%2B_portable_Bluetooth_speaker.jpg/1200px-Bose_SoundLink_Revolve%2B_portable_Bluetooth_speaker.jpg";
+                return "https://m.media-amazon.com/images/I/71eJQYXTVxL.jpg";
             case "Switch OLED":
-                return "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Nintendo_Switch_OLED_model.jpg/1200px-Nintendo_Switch_OLED_model.jpg";
+                return "https://img.pccomponentes.com/articles/43/432881/1945-nintendo-switch-oled-blanca.jpg";
             case "PlayStation 5":
-                return "https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/PlayStation_5_console.jpg/1200px-PlayStation_5_console.jpg";
+                return "https://gmedia.playstation.com/is/image/SIEPDC/ps5-product-thumbnail-01-en-14sep21?$facebook$";
             case "Charge 6":
-                return "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Fitbit_Charge_6.jpg/1200px-Fitbit_Charge_6.jpg";
+                return "https://m.media-amazon.com/images/I/71OAC2L15TL.jpg";
             case "Galaxy Watch 6":
-                return "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Samsung_Galaxy_Watch_6.jpg/1200px-Samsung_Galaxy_Watch_6.jpg";
+                return "https://m.media-amazon.com/images/I/61Swv-UJIVL._UF1000,1000_QL80_.jpg";
             case "MacBook Pro 16":
-                return "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/MacBook_Pro_16-inch_M2_Pro.jpg/1200px-MacBook_Pro_16-inch_M2_Pro.jpg";
+                return "https://i.ebayimg.com/images/g/EGUAAOSwSWhjxdjA/s-l1200.jpg";
+            case "MX Master 3":
+                return "https://m.media-amazon.com/images/I/618IJzC-fFL.jpg";
             default:
-                return "/images/producto-generico.png";
+                return "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Imagen_no_disponible.svg/2048px-Imagen_no_disponible.svg.png";
+        }
+    }
+
+    public String get(String tipoDeDatoACambiar) {
+        switch (tipoDeDatoACambiar){
+            case "marca": return marca;
+            case "modelo": return modelo;
+            case "descripcion": return descripcion;
+            case "precio": return String.valueOf(precio);
+            default: return null;
         }
     }
 }

@@ -1,0 +1,45 @@
+/* Estilo del contenedor principal de la página de error */
+.contenedor-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    padding: 20px;
+    background-color: #f8f9fa; /* Un fondo suave para la página */
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para el título de error */
+.contenedor-error h2 {
+    color: #dc3545; /* Rojo para destacar el error */
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el mensaje de error */
+.contenedor-error p {
+    color: #6c757d; /* Gris para el texto secundario */
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+/* Estilo para el botón de "Vuelva a intentarlo" */
+.contenedor-error a button {
+    background-color: #007bff; /* Azul para el botón */
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; /* Quitar el subrayado del enlace */
+}
+
+/* Efecto al pasar el cursor sobre el botón */
+.contenedor-error a button:hover {
+    background-color: #0056b3;
+}

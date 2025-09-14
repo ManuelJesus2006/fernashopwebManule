@@ -11,4 +11,5 @@ public interface DAOCarro {
     public boolean insert(DAOManager dao, Cliente cliente, Producto producto);
     public boolean delete(DAOManager dao, Cliente cliente, Producto producto);
     public boolean deleteAll(DAOManager dao, Cliente cliente);
+    public boolean deleteProductoConcreto(DAOManager dao, Cliente cliente,Producto producto);
 }

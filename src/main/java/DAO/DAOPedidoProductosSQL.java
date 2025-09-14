@@ -16,7 +16,8 @@ public class DAOPedidoProductosSQL implements DAOPedidoProductos, Serializable {
 
     @Override
     public ArrayList<Producto> readAll(DAOManager dao, int idPedido) {
-        ArrayList<Integer> lista = new ArrayList<>();
+        //ArrayList<Integer> lista = new ArrayList<>();
+        //ArrayList<Producto> productoPedido = new ArrayList<>();
         ArrayList<Producto> productos = new ArrayList<>();
         String sentencia = "SELECT * FROM Pedido_Productos WHERE id_pedido='" + idPedido + "'";
 
@@ -25,7 +26,7 @@ public class DAOPedidoProductosSQL implements DAOPedidoProductos, Serializable {
             PreparedStatement ps = dao.getConn().prepareStatement(sentencia);
             try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
-                    lista.add(rs.getInt("id_producto"));
+                    productos.add(new Producto(rs.getInt("id_producto"),rs.getString("marcaOriginal"),rs.getString("modeloOriginal"),rs.getFloat("precioOriginal")));
                 }
             }
             dao.close();
@@ -33,11 +34,13 @@ public class DAOPedidoProductosSQL implements DAOPedidoProductos, Serializable {
             throw new RuntimeException(e);
         }
 
-        for (Producto p : daoProducto.readAll(dao)) {
+        /*for (Producto p : daoProducto.readAll(dao)) {
             for (Integer idProducto : lista) {
-                if (p.getId() == idProducto) productos.add(p);
+                if (p.getId() == idProducto){
+                    productos.add(p);
+                }
             }
-        }
+        }*/
 
         return productos;
     }
@@ -48,8 +51,8 @@ public class DAOPedidoProductosSQL implements DAOPedidoProductos, Serializable {
         try {
             dao.open();
             for (Producto producto : productos) {
-                String sentencia = "INSERT INTO `Pedido_Productos` (`id_pedido`, `id_producto`) VALUES ('" + pedido.getId() +
-                        "', '" + producto.getId() + "')";
+                String sentencia = "INSERT INTO `Pedido_Productos` (`id_pedido`, `id_producto`, `precioOriginal`, `marcaOriginal`, `modeloOriginal`) VALUES ('" + pedido.getId() +
+                        "', '" + producto.getId() + "', '" + producto.getPrecio() + "', '" + producto.getMarca() +"', '" + producto.getModelo() + "')";
                 Statement stmt = dao.getConn().createStatement();
                 stmt.executeUpdate(sentencia);
             }

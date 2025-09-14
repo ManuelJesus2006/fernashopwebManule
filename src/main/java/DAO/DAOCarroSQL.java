@@ -73,6 +73,21 @@ public class DAOCarroSQL implements DAOCarro, Serializable {
     }
 
     @Override
+    public boolean deleteProductoConcreto(DAOManager dao, Cliente cliente, Producto producto) {
+        try {
+            dao.open();
+            String sentencia = "DELETE FROM Carro WHERE `idCliente` = '" + cliente.getId() + "' AND `idProducto` = '" +
+                    producto.getId() + "'";
+            Statement stmt = dao.getConn().createStatement();
+            stmt.executeUpdate(sentencia);
+            dao.close();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    @Override
     public boolean deleteAll(DAOManager dao, Cliente cliente) {
         try {
             dao.open();

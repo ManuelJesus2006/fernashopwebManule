@@ -3,6 +3,7 @@ package models;
 import DAO.DAOCarroSQL;
 import DAO.DAOManager;
 import DAO.DAOPedidoSQL;
+import org.apache.commons.math3.analysis.integration.IterativeLegendreGaussIntegrator;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -149,6 +150,19 @@ public class Cliente implements Serializable {
 
     public void setCarro(ArrayList<Producto> carro) {
         this.carro = carro;
+    }
+
+    public String get(String tipoDato){
+        switch (tipoDato){
+            case "nombre": return nombre;
+            case "email": return email;
+            case "clave": return clave;
+            case "localidad": return localidad;
+            case "provincia": return provincia;
+            case "direccion": return direccion;
+            case "telefono": return String.valueOf(movil);
+            default: return null;
+        }
     }
 
     //Otros metodos
