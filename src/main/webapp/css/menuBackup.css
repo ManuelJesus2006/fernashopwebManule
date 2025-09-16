@@ -1,0 +1,105 @@
+body {
+    background-color: #f4f4f9;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Contenedor principal del panel de backup */
+.backup-panel {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Estilo para el título */
+.backup-panel h2 {
+    color: #1e3c72;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Contenedor para los botones de acción principal */
+.backup-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* Estilo para los botones principales (Realizar y Recuperar) */
+.backup-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Cambia el color del botón de Recuperar para que sea diferente */
+.backup-button.recuperar {
+    background-color: #dc3545; /* Rojo para una acción de cuidado */
+}
+
+/* Efecto hover general para los botones */
+.backup-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+.backup-button.recuperar:hover {
+    background-color: #c82333;
+}
+
+/* Estilo para el botón de volver al inicio */
+.boton-inicio {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block; /* Para que funcione el padding */
+    margin-top: 10px;
+}
+
+.boton-inicio:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+/* Estilo para la nota de recordatorio */
+.reminder {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    text-align: left;
+    margin-top: 30px;
+}
+
+.reminder b {
+    font-weight: bold;
+    color: #333;
+}

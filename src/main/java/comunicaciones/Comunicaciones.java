@@ -16,6 +16,7 @@ import java.util.Properties;
 
 
 public class Comunicaciones {
+    public static final String CODGMAIL = "zibhfnnylpohmsmu";
     // Metodo que le envia un mensaje al telegram del trabajador que se le ha asignado un pedido
     public static boolean enviaMensajeTelegramTrabajador(String mensaje) {
         String direccion; // URL de la API de mi bot en mi conversación
@@ -41,7 +42,7 @@ public class Comunicaciones {
         //Guardamos la dirección que va a remitir el mensaje
         String emisor = "fernanshopjlmanule@gmail.com";
         String usuario = "fernanshopjlmanule@gmail.com";//Usuario para el logueo en el server de correo
-        String clave = "sfkmqvpupcjjahcg";//Clave del usuario de correo
+        String clave = CODGMAIL;//Clave del usuario de correo
         //Host del servidor de correo
         String host = "smtp.gmail.com";
         //Creamos nuestra variable de propiedades con los datos de nuestro servidor de correo
@@ -194,7 +195,7 @@ public class Comunicaciones {
         //Guardamos la dirección que va a remitir el mensaje
         String emisor = "fernanshopjlmanule@gmail.com";
         String usuario = "fernanshopjlmanule@gmail.com";//Usuario para el logueo en el server de correo
-        String clave = "sfkmqvpupcjjahcg";//Clave del usuario de correo
+        String clave = CODGMAIL;//Clave del usuario de correo
         //Host del servidor de correo
         String host = "smtp.gmail.com";
         //Creamos nuestra variable de propiedades con los datos de nuestro servidor de correo
@@ -326,7 +327,7 @@ public class Comunicaciones {
         //Guardamos la dirección que va a remitir el mensaje
         String emisor = "fernanshopjlmanule@gmail.com";
         String usuario = "fernanshopjlmanule@gmail.com";//Usuario para el logueo en el server de correo
-        String clave = "sfkmqvpupcjjahcg";//Clave del usuario de correo
+        String clave = CODGMAIL;//Clave del usuario de correo
         //Host del servidor de correo
         String host = "smtp.gmail.com";
         //Creamos nuestra variable de propiedades con los datos de nuestro servidor de correo
@@ -470,7 +471,7 @@ public class Comunicaciones {
         //Guardamos la dirección que va a remitir el mensaje
         String emisor = "fernanshopjlmanule@gmail.com";
         String usuario = "fernanshopjlmanule@gmail.com";//Usuario para el logueo en el server de correo
-        String clave = "sfkmqvpupcjjahcg";//Clave del usuario de correo
+        String clave = CODGMAIL;//Clave del usuario de correo
         //Host del servidor de correo
         String host = "smtp.gmail.com";
         //Creamos nuestra variable de propiedades con los datos de nuestro servidor de correo
@@ -614,7 +615,7 @@ public class Comunicaciones {
         //Guardamos la dirección que va a remitir el mensaje
         String emisor = "fernanshopjlmanule@gmail.com";
         String usuario = "fernanshopjlmanule@gmail.com";//Usuario para el logueo en el server de correo
-        String clave = "sfkmqvpupcjjahcg";//Clave del usuario de correo
+        String clave = CODGMAIL;//Clave del usuario de correo
         //Host del servidor de correo
         String host = "smtp.gmail.com";
         //Creamos nuestra variable de propiedades con los datos de nuestro servidor de correo
@@ -746,7 +747,7 @@ public class Comunicaciones {
         //Guardamos la dirección que va a remitir el mensaje
         String emisor = "fernanshopjlmanule@gmail.com";
         String usuario = "fernanshopjlmanule@gmail.com";//Usuario para el logueo en el server de correo
-        String clave = "sfkmqvpupcjjahcg";//Clave del usuario de correo
+        String clave = CODGMAIL;//Clave del usuario de correo
         //Host del servidor de correo
         String host = "smtp.gmail.com";
         //Creamos nuestra variable de propiedades con los datos de nuestro servidor de correo
@@ -802,7 +803,7 @@ public class Comunicaciones {
         //Guardamos la dirección que va a remitir el mensaje
         String emisor = "fernanshopjlmanule@gmail.com";
         String usuario = "fernanshopjlmanule@gmail.com";//Usuario para el logueo en el server de correo
-        String clave = "sfkmqvpupcjjahcg";//Clave del usuario de correo
+        String clave = CODGMAIL;//Clave del usuario de correo
         //Host del servidor de correo
         String host = "smtp.gmail.com";
         //Creamos nuestra variable de propiedades con los datos de nuestro servidor de correo

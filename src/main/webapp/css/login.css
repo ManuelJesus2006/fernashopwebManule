@@ -101,7 +101,7 @@ h2 {
 }
 
 /* Estilo para todos los campos de entrada */
-.form-card input[type="text"],
+.form-card input[type="email"],
 .form-card input[type="password"] {
     width: 100%;
     padding: 12px;
@@ -112,7 +112,7 @@ h2 {
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.form-card input[type="text"]:focus,
+.form-card input[type="email"]:focus,
 .form-card input[type="password"]:focus {
     border-color: #007bff;
     outline: none;

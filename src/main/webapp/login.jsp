@@ -22,7 +22,7 @@
 <div class="form-card">
     <form action="procesarLogin.jsp" method="post">
         <div>
-            <input type="text" name="correo" placeholder="Introduce tu correo" required>
+            <input type="email" name="correo" placeholder="Introduce tu correo" required>
         </div>
         <div class="password-container">
             <input type="password" name="pass" placeholder="Introduce tu contraseña" required>

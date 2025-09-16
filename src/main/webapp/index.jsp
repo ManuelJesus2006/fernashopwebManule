@@ -38,6 +38,12 @@
         <div class="dropdown">
             <button onclick="mostrarMenu()" class="botonDesplegable">⚙️</button>
             <div id="miMenuDesplegable" class="contenidoBotonDesplegable">
+                <%String datosUltimoInicioDeSesion = controlador.ultimoInicioSesion(((Cliente) usuario).getId());
+                if (datosUltimoInicioDeSesion != null){%>
+                <p>Su último inicio de sesión fue: <%=datosUltimoInicioDeSesion%></p>
+                <%}else{%>
+                <p>Sin datos de su último inicio de sesión</p>
+                <%}%>
                 <a href="verPedidos.jsp">Ver mis pedidos</a>
                 <a href="ver-modificarDatosPersonales.jsp">Ver mis datos y perfil</a>
                 <a href="logout.jsp">Cerrar sesión</a>
@@ -54,6 +60,12 @@
         <div class="dropdown">
             <button onclick="mostrarMenu()" class="botonDesplegable">⚙️</button>
             <div id="miMenuDesplegable" class="contenidoBotonDesplegable">
+                <%String datosUltimoInicioDeSesion = controlador.ultimoInicioSesion(((Trabajador) usuario).getId());
+                    if (datosUltimoInicioDeSesion != null){%>
+                <p>Su último inicio de sesión fue: <%=datosUltimoInicioDeSesion%></p>
+                <%}else{%>
+                <p>Sin datos de su último inicio de sesión</p>
+                <%}%>
                 <a href="pedidosAsignados.jsp">Pedidos asignados</a>
                 <a href="pedidosTerminados.jsp">Pedidos terminados</a>
                 <a href="ver-modificarDatosPersonales.jsp">Ver mis datos y perfil</a>
@@ -75,6 +87,12 @@
         <div class="dropdown">
             <button onclick="mostrarMenu()" class="botonDesplegable">⚙️</button>
             <div id="miMenuDesplegable" class="contenidoBotonDesplegable">
+                <%String datosUltimoInicioDeSesion = controlador.ultimoInicioSesion(((Admin) usuario).getId());
+                    if (datosUltimoInicioDeSesion != null){%>
+                <p>Su último inicio de sesión fue: <%=datosUltimoInicioDeSesion%></p>
+                <%}else{%>
+                <p>Sin datos de su último inicio de sesión</p>
+                <%}%>
                 <a href="resumenClientes.jsp">Resumen de todos clientes</a>
                 <a href="verPedidos.jsp">Resumen pedidos de clientes</a>
                 <a href="resumenTrabajadores.jsp">Resumen de todos los trabajadores</a>
