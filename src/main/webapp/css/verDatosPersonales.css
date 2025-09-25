@@ -1,0 +1,56 @@
+/* Contenedor principal para toda la información del usuario */
+.perfil-container {
+    background-color: #ffffff;
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    margin-top: 40px;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+/* Contenedor para cada fila de datos (Nombre, Email, etc.) */
+.dato-perfil {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e9ecef;
+    padding: 15px 0;
+}
+
+.dato-perfil:last-of-type {
+    border-bottom: none; /* Elimina la línea inferior del último elemento */
+}
+
+/* Estilo para los títulos de los datos (h3) */
+.dato-perfil h3 {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #1e3c72;
+    margin: 0;
+}
+
+/* Estilo para el botón "Cambiar" */
+.dato-perfil button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.dato-perfil button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.dato-perfil button:active {
+    transform: translateY(0);
+}

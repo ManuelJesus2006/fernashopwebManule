@@ -102,7 +102,8 @@ h2 {
 
 /* Estilo para todos los campos de entrada */
 .form-card input[type="email"],
-.form-card input[type="password"] {
+.form-card input[type="password"],
+.form-card input[type="text"]{
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -113,7 +114,8 @@ h2 {
 }
 
 .form-card input[type="email"]:focus,
-.form-card input[type="password"]:focus {
+.form-card input[type="password"]:focus,
+.form-card input[type="text"].focus{
     border-color: #007bff;
     outline: none;
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);

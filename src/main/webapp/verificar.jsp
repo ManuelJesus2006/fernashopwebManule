@@ -17,29 +17,32 @@
 <body>
 <h1>Validando su cuenta...</h1>
 <%
-  Controlador controlador;
-  if (session.getAttribute("controlador") == null){
-    controlador = new Controlador();
-    session.setAttribute("controlador", controlador);
-  }else controlador = (Controlador) session.getAttribute("controlador");
-  DAOManager dao = DAOManager.getSinglentonInstance();
-  String token = request.getParameter("token");
-int idCliente = Integer.parseInt(request.getParameter("userId"));
-DAOClienteSQL daoClienteSQL = new DAOClienteSQL();
-  ArrayList<Cliente> todosClientes = daoClienteSQL.readAll(dao);
-  Cliente cliente = null;
-for (Cliente c : todosClientes){
-  if (c.getId() == idCliente) cliente = c;
-}
-  if (cliente.isValid()){
-    session.setAttribute("error", "Este usuario ya está verificado");
-    response.sendRedirect("error.jsp");
-    return;
-  }else{
-    controlador.compruebaToken(cliente, token);
-    session.setAttribute("usuario",cliente);
-    response.sendRedirect("index.jsp");
-  }
+    Controlador controlador;
+    if (session.getAttribute("controlador") == null) {
+        controlador = new Controlador();
+        session.setAttribute("controlador", controlador);
+    } else controlador = (Controlador) session.getAttribute("controlador");
+    DAOManager dao = DAOManager.getSinglentonInstance();
+    String token = request.getParameter("token");
+    int idCliente = Integer.parseInt(request.getParameter("userId"));
+    DAOClienteSQL daoClienteSQL = new DAOClienteSQL();
+    ArrayList<Cliente> todosClientes = daoClienteSQL.readAll(dao);
+    Cliente cliente = null;
+    for (Cliente c : todosClientes) {
+        if (c.getId() == idCliente) cliente = c;
+    }
+    if (cliente.isValid()) {
+        session.setAttribute("error", "Este usuario ya está verificado");
+        response.sendRedirect("error.jsp");
+        return;
+    } else if (token != null) {
+        controlador.compruebaToken(cliente, token);
+        session.setAttribute("usuario", cliente);
+        response.sendRedirect("index.jsp");
+    } else {
+        session.setAttribute("error", "Error con la validación, sentimos las molestias");
+        response.sendRedirect("error.jsp");
+    }
 %>
 
 </body>

@@ -161,6 +161,7 @@ public class Controlador implements Serializable {
         daoPedidoProductosSQL.insert(dao, pedidoTemp);
         Persistencia.guardaResumenPedido(pedidoTemp);
         Comunicaciones.enviaCorreoResumen(temp.getEmail(), pedidoTemp);
+        Comunicaciones.enviaCorreoPedidoCliente(temp.getEmail(), "PEDIDO REALIZADO CON ÉXITO", pedidoTemp);
         temp.vaciaCarro();
         daoCarroSQL.deleteAll(dao, temp);
         //Persistencia.guardaClienteEnDisco(temp);
@@ -337,6 +338,7 @@ public class Controlador implements Serializable {
             daoPedidoSQL.update(dao, pedido);
             Persistencia.guardaActividadActualizaPedido(pedido);
         }
+        enviaCorreoPedidoModificadoCliente(idPedido);
 
         return bandera;
     }
@@ -458,6 +460,7 @@ public class Controlador implements Serializable {
                 //Persistencia.guardaActividadNuevoPedido(cliente.getId(), trabajadorTemp.getId());
                 daoPedidoSQL.updateTrabajador(dao, pedidoTemp, trabajadorTemp);
             }
+            Comunicaciones.enviaMensajeTelegramTrabajador(trabajadorTemp.getNombre() + " se te ha asignado el pedido: " + pedidoTemp.getId());
             //Persistencia.guardaTrabajadorEnDisco(trabajadorTemp);
         }
 
@@ -673,7 +676,7 @@ public class Controlador implements Serializable {
         }
         String enlaceAcceso = urlBase + "verificar.jsp?token=" + token + "&userId=" + c.getId();
 
-        Comunicaciones.enviaCorreoToken(c.getEmail(), "¡Hola! Bienvenido a FERNANSHOP, haz clic para iniciar sesión.", "ENLACE DE ACCESO ÚNICO", enlaceAcceso, c.getNombre());
+        Comunicaciones.enviaCorreoToken(c.getEmail(), "¡Hola! Bienvenido a FERNANSHOP, haz clic en el siguiente enlace para verificar tu cuenta e iniciar sesión.", "ENLACE DE ACCESO ÚNICO", enlaceAcceso, c.getNombre());
 
         return token;
     }
@@ -876,7 +879,7 @@ public class Controlador implements Serializable {
         if (temp.getPedidos().isEmpty()) return pedidosCancelados;
 
         for (Pedido p : temp.getPedidos()) {
-            if (p.getEstado() == 4) pedidosCancelados.add(p);
+            if (p.getEstado() == 3) pedidosCancelados.add(p);
         }
 
         Collections.sort(pedidosCancelados);

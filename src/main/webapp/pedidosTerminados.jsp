@@ -45,7 +45,7 @@
                 <a href="pedidosAsignados.jsp">Pedidos asignados</a>
                 <a href="pedidosTerminados.jsp">Pedidos terminados</a>
                 <a href="ver-modificarDatosPersonales.jsp">Ver mis datos y perfil</a>
-                <a href="logout.jsp">Cerrar sesión</a>
+                <a href="logout.jsp" style="font-weight: bold; color: red">Cerrar sesión</a>
             </div>
         </div>
         <%

@@ -39,7 +39,7 @@
             <div id="miMenuDesplegable" class="contenidoBotonDesplegable">
                 <a href="verPedidos.jsp">Ver mis pedidos</a>
                 <a href="ver-modificarDatosPersonales.jsp">Ver mis datos y perfil</a>
-                <a href="logout.jsp">Cerrar sesión</a>
+                <a href="logout.jsp" style="font-weight: bold; color: red">Cerrar sesión</a>
             </div>
         </div>
         <a href="busquedaProductos.jsp"><button class="busquedaProducto">🔍︎</button></a>

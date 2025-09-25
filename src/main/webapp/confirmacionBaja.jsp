@@ -19,10 +19,7 @@
     } else controlador = (Controlador) session.getAttribute("controlador");
     // Lógica para comprobar si hay un usuario logueado
     usuario = session.getAttribute("usuario");
-    if (usuario == null){
-        response.sendRedirect("index.jsp");
-        return;
-    }else if(usuario instanceof Admin){
+    if (usuario instanceof Admin){
         int idTrabajador;
         try{
             idTrabajador = Integer.parseInt(request.getParameter("idTrabajador"));
@@ -33,18 +30,24 @@
         Trabajador trabajador = controlador.buscaTrabajadorById(idTrabajador);
 %>
     <title>¿Dar de baja a trabajador nº<%=idTrabajador%></title>
+    <link rel="stylesheet" href="css/confirmationBaja.css">
 </head>
 <body>
-<h2>Esta a punto de dar de baja al trabajador nº<%=idTrabajador%>:</h2>
-<h3>Nombre: <%=trabajador.getNombre()%></h3>
-<h3>Correo: <%=trabajador.getEmail()%></h3>
-<h3>Móvil: <%=trabajador.getMovil()%></h3>
-<h4>¿Desea continuar?</h4>
-<form action="procesarBajaTrabajador.jsp" method="post">
-    <input type="hidden" name="idTrabajador" value="<%=trabajador.getId()%>">
-    <button type="submit">Si, dar de baja</button>
-</form>
-<a href="index.jsp"><button>No, volver al inicio</button></a>
+<div class="warning-box">
+    <h2>Esta a punto de dar de baja al trabajador nº<%=idTrabajador%>:</h2>
+    <h3>Nombre: <%=trabajador.getNombre()%></h3>
+    <h3>Correo: <%=trabajador.getEmail()%></h3>
+    <h3>Móvil: <%=trabajador.getMovil()%></h3>
+    <h4>¿Desea continuar?</h4>
+
+    <div class="button-container">
+        <form action="procesarBajaTrabajador.jsp" method="post">
+            <input type="hidden" name="idTrabajador" value="<%=trabajador.getId()%>">
+            <button type="submit">Si, dar de baja</button>
+        </form>
+        <a href="index.jsp"><button class="volver-btn">No, volver al inicio</button></a>
+    </div>
+</div>
 <%}else{
         response.sendRedirect("index.jsp");
         return;

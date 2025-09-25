@@ -71,53 +71,95 @@ body {
     font-weight: bold;
 }
 
-.producto-style {
-    border: 2px darkred ridge;
-    width: 400px;
-    height: 400px;
-    margin: 10px;
-    box-sizing: border-box;
-}
-
-.producto-style h4 {
-    text-align: center;
-}
-
-.producto-style h5 {
-    text-align: center;
-    margin-bottom: 20px;
-    background-color: red;
-    color: white;
-}
-
-.producto-style h3 {
-    text-align: center;
-}
-
-/* Contenedor padre para que los productos se pongan en línea */
+/* Estilos para el contenedor de productos */
 .contenedor-de-productos {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* <-- CÓDIGO CAMBIADO AQUÍ */
+    gap: 25px;
+    padding: 30px;
     justify-content: center;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
+/* Estilos para cada tarjeta de producto */
+.producto-style {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.producto-style:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+}
+
+/* Estilos para la imagen del producto */
 .producto-style img {
-    width: 300px;
-    display: block;
-    margin: 0 auto;
-    height: 250px;
+    max-width: 100%;
+    height: 180px; /* Altura fija para que todas las imágenes se vean similares */
+    object-fit: contain; /* Ajusta la imagen sin distorsionarla */
+    margin-bottom: 15px;
 }
 
-.producto-style button {
-    margin: auto;
-    height: auto;
-    display: block;
+/* Estilos para el nombre del producto */
+.producto-style h4 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 10px 0;
 }
 
+/* Estilos para el precio del producto */
+.producto-style h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #007bff;
+    margin: 10px 0;
+}
+
+/* Estilos para el mensaje de promoción */
+.producto-style h5 {
+    background-color: #e0f2f1;
+    color: #00796b;
+    font-weight: bold;
+    font-size: 0.9em;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.producto-style .botonDetallesProducto {
+    background-color: #007bff; /* Color azul */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: auto;
+}
+
+.producto-style .botonDetallesProducto:hover {
+    background-color: #0056b3; /* Un azul más oscuro al pasar el cursor */
+    transform: scale(1.05);
+}
+
+/* Estilos para el mensaje de error de acceso */
 .error-guest-products {
     text-align: center;
-    margin-top: 400px;
+    margin: 100px auto;
+    font-size: 2em;
+    color: #dc3545;
 }
 
 .busquedaProducto {
@@ -196,52 +238,56 @@ body {
 /* Contenedor principal del panel de configuración */
 .configuracion-panel {
     background-color: #ffffff;
-    padding: 40px;
+    padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     width: 100%;
-    text-align: center;
-    margin-top: 50px; /* Espacio para separarlo del header */
+    margin-bottom: 20px; /* Espacio entre el panel y el botón */
+    margin: auto;
 }
 
-/* Estilo para el título */
+/*Para mostrarConfiguracion.jsp*/
 .configuracion-panel h2 {
-    color: #1e3c72;
+    color: #1e3c72; /* Azul oscuro */
+    font-size: 1.5em;
+    font-weight: 600;
+    margin-top: 0;
     margin-bottom: 20px;
-    font-size: 1.8em;
-    font-weight: bold;
+    border-bottom: 2px solid #e0e0e0; /* Separador sutil */
+    padding-bottom: 10px;
 }
 
-/* Estilo para el párrafo con la información */
+/* Contenido de la configuración */
 .configuracion-panel p {
-    font-size: 1.1em;
-    color: #495057;
-    white-space: pre-wrap; /* Mantiene los saltos de línea de la cadena de texto */
-    text-align: left;
-    background-color: #f8f9fa;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #e9ecef;
+    white-space: pre-wrap; /* Mantiene los saltos de línea (\n) generados por el JSP */
+    font-family: monospace, monospace; /* Fuente monoespaciada para código/configuración */
+    background-color: #f8f8f8; /* Fondo ligero para diferenciar el código/texto */
+    border: 1px solid #e0e0e0;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: auto; /* Permite desplazamiento horizontal si el texto es muy largo */
 }
 
-/* Estilo para el botón de volver al inicio */
 .volver-btn {
-    background-color: #6c757d;
+    /* Estilo del botón primario */
+    background-color: #007bff; /* Azul estándar */
     color: white;
     border: none;
-    padding: 12px 24px;
-    border-radius: 5px;
+    padding: 12px 25px;
+    border-radius: 6px;
     cursor: pointer;
     font-size: 1em;
     font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    margin-top: 20px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    text-decoration: none; /* Asegura que el enlace no tenga subrayado */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .volver-btn:hover {
-    background-color: #5a6268;
-    transform: translateY(-2px);
+    background-color: #0056b3;
+    transform: translateY(-1px);
 }

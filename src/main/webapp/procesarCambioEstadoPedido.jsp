@@ -1,5 +1,7 @@
 <%@ page import="controlador.Controlador" %>
-<%@ page import="java.time.LocalDate" %><%--
+<%@ page import="java.time.LocalDate" %>
+<%@ page import="comunicaciones.Comunicaciones" %>
+<%@ page import="models.Pedido" %><%--
   Created by IntelliJ IDEA.
   User: manol
   Date: 10/09/2025

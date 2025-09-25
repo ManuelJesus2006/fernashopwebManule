@@ -10,10 +10,12 @@ body {
 
 h3 {
     text-align: center;
-    color: #1e3c72; /* Color similar al de tu título principal */
-    font-size: 1.8em;
-    margin-bottom: 20px;
-    font-weight: bold;
+    color: #1e3c72;
+    font-size: 1.5em; /* Ligeramente más pequeño dentro del recuadro */
+    margin-top: 0; /* Eliminar margen superior para pegarlo al borde */
+    margin-bottom: 25px; /* Buen espaciado con el primer campo */
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0; /* Línea sutil para separarlo de los campos */
 }
 
 form {
@@ -51,8 +53,15 @@ form input[type="date"]:focus {
 
 .button-container {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row; /* Los elementos se alinean en una fila */
+    gap: 10px; /* Espacio entre los botones */
+    margin-top: 5px; /* Pequeño ajuste de margen superior */
+}
+
+form button,
+.cancel-button {
+    flex-grow: 1; /* Permite que el elemento crezca para llenar el espacio */
+    width: auto !important; /* Anulamos el width: 100% de los estilos anteriores */
 }
 
 form button {
@@ -74,9 +83,11 @@ form button:hover {
 }
 
 .cancel-button {
-    background-color: #6c757d;
-    color: white;
-    border: none;
+    /* Fondo transparente */
+    background-color: transparent;
+    /* Borde y color de texto gris para mantener la coherencia */
+    color: #6c757d;
+    border: 2px solid #6c757d; /* Borde visible */
     padding: 12px;
     border-radius: 5px;
     cursor: pointer;
@@ -86,11 +97,14 @@ form button:hover {
     display: block;
     width: 100%;
     text-align: center;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+    /* Elimina la sombra para que parezca más ligero que el principal */
+    box-shadow: none;
 }
 
 .cancel-button:hover {
-    background-color: #5a6268;
-    transform: translateY(-2px);
+    /* Efecto hover: se rellena con un gris claro */
+    background-color: #e2e6ea;
+    color: #343a40; /* Texto más oscuro */
+    transform: translateY(-1px); /* Efecto de elevación sutil */
 }

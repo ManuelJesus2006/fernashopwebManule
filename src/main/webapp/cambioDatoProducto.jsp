@@ -26,6 +26,7 @@
     }
   %>
   <title>Cambio de <%=tipoDeDatoACambiar%> de producto</title>
+  <link rel="stylesheet" href="css/cambioDatoProducto.css">
 </head>
 <body>
 <%String articulo;
